@@ -31,7 +31,7 @@ void My_Thread(void *ptr)
 	// Lo siguiente no se ejecutará, pero es buena costumbre incluirlo
 	pthread_exit(0);	// Para salir correctamente del hilo
 }
-void My_Thread4(void)
+void My_Thread4(void *arg)
 {
 	while(1)
 	{
