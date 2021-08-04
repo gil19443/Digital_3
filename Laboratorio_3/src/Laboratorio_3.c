@@ -7,6 +7,7 @@
  Description : Multiples hilos, modificacion de L3_hilos_Ej1.c creado por Luis Rivera
  Date        : Guatemala, 4 de agosto del 2021
  Course      : Electronica Digital 3
+ Assignment  : Laboratorio 3
  ============================================================================
  */
 
@@ -31,13 +32,14 @@ void My_Thread(void *ptr)
 	// Lo siguiente no se ejecutará, pero es buena costumbre incluirlo
 	pthread_exit(0);	// Para salir correctamente del hilo
 }
-void My_Thread4(void *arg)
-{
+//codigo para ejecutar por el  tercer hilo
+void My_Thread4(void *arg) //al momento se llamarla con la funcion pthread_create, se le asigna NULL
+{							//como entrada de la funcion
 	while(1)
 	{
-		printf("Laboratorio_3 Carlos Gil ");
+		printf("Laboratorio_3 Carlos Gil "); //imprime un texto
 		fflush(stdout);
-		usleep(5000000);
+		usleep(5000000);//duerme durante 5 segundos
 	}
 
 	// Lo siguiente no se ejecutará, pero es buena costumbre incluirlo
@@ -47,9 +49,9 @@ void My_Thread4(void *arg)
 int main(void)
 {
 	pthread_t thread2;	// variable para identificar el 2do hilo que se creará
-	pthread_t thread3;	// variable para identificar el 2do hilo que se creará
-	pthread_t thread4;	// variable para identificar el 2do hilo que se creará
-	// Los siguientes son dos strings
+	pthread_t thread3;	// variable para identificar el 3er hilo que se creará
+	pthread_t thread4;	// variable para identificar el 4to hilo que se creará
+	// Los siguientes son tres strings
 	char *message1 = "Hello ";
 	char *message2 = "World\n";
 	char *message3 = "Buenos_dias\n";
